@@ -39,7 +39,7 @@
                 </thead>
                 <tbody>
                     {% if files %}
-			<ul>
+
 			{% for file in files %}
                 <tr>
                     <th>{{ file.file.name }}</th>
@@ -47,9 +47,7 @@
                     <th><a class="btn btn-primary btn-sm" href={% url "main:assign-task" id=file.id %}>Book</a></th>
                     <th><a class="btn btn-primary btn-sm" href={% url "main:delete-task" id=file.id %}>Delete</a></th>
                 </tr>
-				<li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a></li>
 			{% endfor %}
-			</ul>
 		{% else %}
 		{% endif %}
                 </tbody>

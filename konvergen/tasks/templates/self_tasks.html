@@ -32,11 +32,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th>Name</th>
-                        <th><button type="button" class="btn btn-primary btn-sm">Download</button></th>
-                        <th><button type="button" class="btn btn-primary btn-sm">Revoke</button></th>
-                    </tr>
+                {% if files %}
+                {% for file in files %}
+                <tr>
+                    <th>{{ file.file.name }}</th>
+                    <th><a class="btn btn-primary btn-sm" href={% url "main:assign-task" id=file.id %}>Download</a></th>
+                    <th><a class="btn btn-primary btn-sm" href={% url "main:delete-task" id=file.id %}>Revoke Booking</a></th>
+                </tr>
+			    {% endfor %}
+		        {% else %}
+		        {% endif %}
                 </tbody>
             </table>
                 </div>

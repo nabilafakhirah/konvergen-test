@@ -46,6 +46,9 @@ def tasks(request):
 
 def self_tasks(request):
     if request.session.has_key('username'):
+        username = request.session["username"]
+        files = Tasks.objects.filter(status=1, username=username)
+        response['files'] = files
         return render(request, 'self_tasks.html', response)
     else:
         return redirect("/login")
@@ -58,10 +61,8 @@ def model_form_upload(request):
             newdoc = Tasks(name='file', file=request.FILES['docfile'])
             newdoc.save()
 
-            # Redirect to the document list after POST
             return redirect('/tasks')
     else:
-        form = DocumentForm()  # A empty, unbound form
         return redirect('/tasks')
 
 
