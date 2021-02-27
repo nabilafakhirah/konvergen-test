@@ -18,4 +18,6 @@ urlpatterns = [
 
     url(r'^assign-task/(?P<id>\w+)', assign_task, name='assign-task'),
     url(r'^delete-task/(?P<id>\w+)', delete_task, name='delete-task'),
+    url(r'^revoke-task/(?P<id>\w+)', revoke_task, name='revoke-task'),
+    url(r'^download/(?P<id>\w+)', download, name='download'),
 ]

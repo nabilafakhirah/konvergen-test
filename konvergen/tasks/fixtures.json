@@ -1,0 +1,9 @@
+[
+    {
+      "model": "tasks.UserProfile",
+      "fields": {
+        "username" : "defaultuser",
+        "password" : "defaultpass"
+      }
+    }
+  ]

@@ -21,7 +21,8 @@
         <div class="d-flex justify-content-center">
             <div class="container login">
               <div class="row">
-                <div class="jumbotron">
+               <div class="col-md-offset-3 col-md-6" style="margin-top: 100px;">
+                <div class="jumbotron" style="min-height: 450px;">
                   <h4 class="mb-0 mt-5 display-4 text-center " id="textlogin">Login</h4>
                   <p class="mb-5"></p>
                   <form method="POST" action="/log-in/">
@@ -35,13 +36,21 @@
                           <label>Password</label>
                           <input name="password" type="password" class="form-control" placeholder="Password" id="password">
                         </div>
-                        {% if message == "no" %}
-                        <h3 id="letter" class="invalid">Invalid <b>User</b> or <b>Password</b>!</h3>
-                        {% endif %}
-                        <button type="submit" class="btn btn-success btn-sm">Login</button>
-                        <a class="btn btn-success btn-sm" href="/signup">Sign Up</a>
-                      </form>
+                        <div class="col-md-offset-3 col-md-6 text-center">
+                            {% if message == "no" %}
+                            <p style="color: red;">Invalid <b>User</b> or <b>Password</b>!</p>
+                            {% endif %}
+                            <button type="submit" class="btn btn-primary btn-sm">Login</button>
+                        </div>
+                        </form>
+
+                  <div class="col-md-offset-3 col-md-6 text-center" style="margin-top:10px;">
+                  <a class="btn btn-primary btn-sm" href="/signup">Sign Up</a>
+                  </div>
+
+
                 </div>
+               </div>
               </div>
             </div>
           </div>

@@ -18,14 +18,18 @@
     </title>
   </head>
 <body>
+    <header>
+      {% include "navbar.html" %}
+    </header>
+
         <div class="d-flex justify-content-center">
-            <div class="col-md-offset-3 col-md-6" style="margin-top: 100px;">
+            <div class="col-md-offset-3 col-md-6" style="margin-top: 20px;">
                 <div class="col-md-offset-3 col-md-6 text-center">
-                    <h3>All Tasks</h3>
+                    <h3>Upload Task</h3>
                       <form action="{% url "main:upload" %}" method="post" enctype="multipart/form-data">
 			            {% csrf_token %}
-			            <input type="file" name="docfile">
-			<p><input type="submit" class="btn btn-primary" value="Upload" /></p>
+			            <input type="file" class="form-control-file" name="docfile" style="margin-left: auto">
+			<input type="submit" class="btn btn-primary" value="Upload" style="margin:10px;"/>
 		</form>
                 </div>
             <table id="datatable" class="table table-striped table-bordered" style="width:100%">
