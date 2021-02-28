@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.views.generic import RedirectView
 import tasks.urls as tasks
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include(tasks, namespace='main')),
+    url(r'^$', RedirectView.as_view(url="/tasks/", permanent="true"), name='index'),
 ]
