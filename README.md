@@ -26,24 +26,19 @@ Program used to develop this application:
     pip install -r requirements.txt
     ```
 
-4. Move directories inside the project directory by inserting this command:
-    ```bash
-    cd konvergen
-    ```
-
-5. Do database migrations and populate user table by running these commands:
+4. Do database migrations and populate user table by running these commands:
     ```bash
     python manage.py makemigrations
     python manage.py migrate
     python manage.py loadfixture tasks/fixture.json
     ```
 
-6. Collect static files by running this command:
+5. Collect static files by running this command:
     ```bash
     python manage.py collectstatic
     ```
 
-7. You can now run the program by running this command:
+6. You can now run the program by running this command:
     ```bash
     python manage.py runserver
     ```
